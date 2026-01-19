@@ -1,0 +1,15 @@
+# STEP 1: PROJECT INITIALIZATION
+# मकसद: GitHub को बताना कि हम क्या-क्या जोड़ने वाले हैं।
+
+Project_Name = "Raj movie new studio"
+Device_Target = "Huawei 9X Pro (Safe Mode)"
+
+# भविष्य में जोड़े जाने वाले फीचर्स की लिस्ट:
+Future_Updates = [
+    "Step_2: 9X_Pro_Titanium_Shield_Setup", # पहले फोन की सुरक्षा
+    "Step_3: 3D_Cinema_Engine_Integration", # फिर 3D विजुअल्स
+    "Step_4: Magnetic_Attraction_AI",       # फिर ऑडियंस खींचने वाली फ्रीक्वेंसी
+    "Step_5: Auto_APK_Generation"           # अंत में मोबाइल पर APK
+]
+
+print("GitHub is now informed. Ready for Step 2.")
