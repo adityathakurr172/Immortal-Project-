@@ -1,26 +1,29 @@
 name: Build_9X_Pro_Master_APK
-on: [push]
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Setup Java
-        uses: actions/setup-java@v1
+      - name: Set up Java
+        uses: actions/setup-java@v3
         with:
           java-version: '11'
+          distribution: 'temurin'
 
-      - name: Build Android APK
+      - name: Build Start
         run: |
-          echo "Building Emperor Al-Noor Engine..."
           mkdir -p output
-          echo "APK_BUILD_PROCESS_STARTED" > output/status.txt
-          # यह सर्वर को APK पैक करने का आदेश है
+          echo "Engine Ready for Honor 9X Pro" > output/ready.txt
 
-      - name: Upload APK Artifact
-        uses: actions/upload-artifact@v2
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
         with:
           name: Al-Noor-Supreme-APK
           path: output/
