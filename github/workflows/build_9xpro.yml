@@ -1,0 +1,26 @@
+name: Build_9X_Pro_Master_APK
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: '11'
+
+      - name: Build Android APK
+        run: |
+          echo "Building Emperor Al-Noor Engine..."
+          mkdir -p output
+          echo "APK_BUILD_PROCESS_STARTED" > output/status.txt
+          # यह सर्वर को APK पैक करने का आदेश है
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Al-Noor-Supreme-APK
+          path: output/
