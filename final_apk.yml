@@ -10,11 +10,10 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Setup Gradle
+        run: gradle wrapper
       - name: Build with Gradle
         run: |
-          if [ ! -f "gradlew" ]; then
-            gradle wrapper
-          fi
           chmod +x gradlew
           ./gradlew assembleDebug
       - name: Upload APK
